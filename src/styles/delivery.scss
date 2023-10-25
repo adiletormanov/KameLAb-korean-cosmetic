@@ -1,0 +1,92 @@
+.delivery_container{
+	max-width: 1062px;
+	margin: 70px auto;
+}
+
+.delivery__title{
+	color: #000;
+font-family: Comfortaa;
+font-size: 28px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+text-align: center;
+margin-bottom: 60px;
+}
+
+.delivery__text{
+	color: #000;
+font-family: Comfortaa;
+font-size: 22px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+text-align: center;
+margin-bottom: 50px;
+}
+
+.delivery__block{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 100px;
+	justify-content: center;
+	margin-bottom: 60px;
+}
+
+.delivery__block-item{
+  width: calc(50% - 100px);
+	height: 337px;
+padding: 50px;
+border-radius: 20px;
+padding: 40px;
+cursor: pointer;
+}
+
+.delivery__block-item-title{
+	color: #000;
+font-family: Comfortaa;
+font-size: 22px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+
+text-align: center;
+margin-bottom: 50px;
+}
+
+.delivery__block-item-price{
+display: flex;
+gap: 20px;
+align-items: center;
+margin-bottom: 30px;
+
+color: #000;
+font-family: Montserrat;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.delivery__adress-title{
+	color: #000;
+font-family: Montserrat;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+margin-bottom: 20px;
+}
+
+.delivery__adress{
+	color: #000;
+	font-family: Montserrat;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+
+	display: flex;
+	gap: 20px;
+	margin-bottom: 10px;
+}

@@ -1,0 +1,157 @@
+.cartitem__container{
+	display: flex;
+	justify-content: space-between;
+	max-width: 1200px;
+	margin: 0 auto;
+	}
+
+	.cartitem__image-img{
+		width: 500px;
+		height: 600px;
+
+	}
+
+	.cartitem__about{
+		margin: 80px 0;
+	}
+
+
+	.cartitem__about-title{
+		width: 541px;
+	color: #000;
+	font-family: Comfortaa;
+	font-size: 28px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	margin-bottom: 60px;
+	}
+
+	.cartitem__about-price{
+	color: #000;
+	font-family: Montserrat;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	}
+
+	.cartitem__about-btn{
+	width: 190.5px;
+	padding: 20px 25px;
+	border-radius: 20px;
+	background: var(--unnamed, #B49696);
+	border: none;
+
+	color: #FFF;
+	font-family: Comfortaa;
+	font-size: 22px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	margin: 30px 0;
+
+	transition: ease-in 0.5s;
+	}
+
+	.cartitem__about-btn:hover{
+		background: #183c0a;
+	}
+
+	.cartitem__about-btn.active{
+		background: #183c0a;
+	}
+
+
+	.cartitem__about-describe{
+		color: #000;
+	font-family: Comfortaa;
+	font-size: 22px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	margin-bottom: 30px;
+	}
+
+	.cartitem__about-subscribe{
+		width: 641px;
+	color: #000;
+	font-family: Montserrat;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	}
+
+
+	/**/
+	.cartitems {
+		margin-bottom: 70px;
+	}
+
+	.cartitems__block {
+		margin-bottom: 70px;
+	}
+
+	.cartitems__title {
+		text-align: center;
+		color: #000000;
+		font-size: 28px;
+		font-weight: 500;
+		margin-bottom: 60px;
+		font-family: Comfortaa;
+	}
+
+	.cartitems__row {
+		display: flex;
+		gap: 30px;
+		flex-wrap: wrap;
+	}
+
+	.cartitems__card {
+		width: calc(16.6% - 25px);
+		padding: 10px 33px;
+		box-sizing: border-box;
+		border-radius: 20px;
+		border: 1px solid rgba(0, 0, 0, 0.2);
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.cartitems__img {
+		width: 100%;
+	}
+
+	.cartitems__card-title {
+		width: 100%;
+		color: #000;
+		text-align: center;
+		font-size: 18px;
+		font-weight: 400;
+		margin: 10px 0;
+		font-family: Montserrat;
+	}
+
+	.cartitems__card-price {
+		color: var(--, #000);
+		font-family: Montserrat;
+		font-size: 18px;
+		font-weight: 500;
+		line-height: normal;
+		margin: 10px 0;
+	}
+
+	.cartitems__card-btn {
+		padding: 15px;
+		border-radius: 20px;
+		border: none;
+		background: #b49696;
+		color: #ffffff;
+		font-family: Montserrat;
+		font-size: 18px;
+		font-weight: 400;
+		line-height: normal;
+
+
+	}

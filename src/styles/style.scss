@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500&family=Montserrat:wght@400;500&display=swap');
+
+@import 'header';
+@import 'footer';
+@import "home";
+@import 'cart';
+@import 'cartItem';
+@import 'catalog';
+@import 'certificate';
+@import 'contacts';
+@import 'delivery';
+@import 'order';
+@import 'faq';
+@import 'favorites';
+@import 'myOrders';
+
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-style: normal;
+  font-weight: 400;
+  resize: none;
+  list-style-type: none;
+  text-decoration: none;
+	scroll-behavior: smooth;
+}
+
+
+
+html{
+  height: 100%;
+}
+body {
+  min-height: 100%;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.catalog {
+  flex: 1 1 auto;
+}
+.main {
+  flex: 1 1 auto;
+}
+button {
+  cursor: pointer;
+  border: none;
+}
+
+textarea{
+	outline: none;
+}
+
+input {
+  border: none;
+	outline: none;
+}
+
+
+.container {
+  max-width: 1780px;
+  margin: 0 auto;
+}

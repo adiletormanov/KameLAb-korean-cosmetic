@@ -1,0 +1,378 @@
+button {
+  cursor: pointer;
+}
+
+.order__container {
+  max-width: 1516px;
+  margin: 70px auto;
+}
+
+.order__title {
+  text-align: center;
+
+  color: #000;
+  font-family: Comfortaa;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 60px;
+}
+
+.order__block {
+  display: flex;
+  gap: 393px;
+  justify-content: center;
+}
+
+.order__date {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.order__date-title {
+  color: #000;
+  font-family: Comfortaa;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.order__date-name,
+.order__date-phone,
+.order__date-email,
+.order__date-name,
+.order__date-review{
+	color: rgba(0, 0, 0, 0.7);
+	font-family: Montserrat;
+	font-size: 18px;
+}
+
+.order__date-name,
+.order__date-phone,
+.order__date-email {
+  border-radius: 20px;
+  background: #efe1e1;
+
+  width: 517px;
+  padding: 20px 10px 20px 20px;
+
+  border: none;
+}
+
+.order__date-review {
+  border-radius: 20px;
+  background: #efe1e1;
+
+  width: 517px;
+  height: 158px;
+  padding: 20px 10px 20px 20px;
+
+  border: none;
+}
+
+.order__your {
+  width: 606px;
+
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 60px;
+ display: block;
+
+
+
+}
+
+.order__your-title {
+  color: #000;
+  font-family: Comfortaa;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  text-align: center;
+}
+
+.order__your-about {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 0;
+	margin: 50px 0;
+}
+
+.order__your-about-item {
+  align-items: baseline;
+  display: flex;
+  margin-bottom: 0.5em;
+  justify-content: space-between;
+
+  color: #000;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.order__your-about-item::before {
+  content: '';
+  border-bottom: 1px dashed #ccc;
+  flex-grow: 1;
+  order: 2;
+  margin: 0 5px;
+}
+
+.order__your-about .value {
+  order: 3; /* Выводим третьим */
+}
+
+.order__your-button{
+	text-align: center;
+}
+
+.order__your-btn {
+  border-radius: 20px;
+  background:  #b49696;
+
+  width: 289px;
+  height: 59px;
+
+  color: #fff;
+  font-family: Comfortaa;
+  font-size: 22px;
+  font-weight: 400;
+
+}
+
+.order__info {
+  display: flex;
+  justify-content: right;
+  margin-top: 20px;
+  margin-right: 47px;
+
+  color: #000;
+  font-family: Montserrat;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  display: flex;
+  gap: 5px;
+}
+
+.orderpay__info {
+  background-color: #fff;
+}
+
+.orderpay__title {
+  color: #000;
+  font-family: Comfortaa;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 50px;
+}
+
+.orderpay__title-star {
+  color: #f00;
+  font-family: Comfortaa;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.orderpay__infoblock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.orderpay__info-btn {
+  width: 439px;
+  height: 57px;
+
+  border: none;
+  padding: 0 20px;
+  border-radius: 20px;
+  background: #efe1e1;
+  outline: none;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.orderpay__info-btn span {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.orderpay__block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  display: none;
+}
+
+.orderpay__door-title {
+  margin-top: -10px;
+  color: #000;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 20px;
+}
+
+.orderpay__door-btn2 {
+  border: none;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 387px;
+  height: 62px;
+  padding: 0 20px;
+  border-radius: 20px;
+  background: #efe1e1;
+
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  margin-bottom: 20px;
+}
+
+.orderpay__door-btns {
+  margin-left: 68px;
+  margin-bottom: 20px;
+}
+
+.orderpay__door-btn-city {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
+  border-radius: 20px;
+  border: 1px solid #b49696;
+
+  width: 271px;
+  height: 62px;
+  padding-left: 10px;
+	margin-bottom: 10px;
+
+  color: #000;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.orderpay__door-btn-city {
+  border: 1px solid #b49696;
+}
+
+.orderpay__door-adress {
+  border: none;
+  outline: none;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+
+  width: 387px;
+  height: 62px;
+  padding-left: 27px;
+
+  gap: 10px;
+  border-radius: 20px;
+  background: #efe1e1;
+
+  color: #000;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.orderpay__door-adress i {
+  font-size: 1.6rem;
+}
+
+.orderpay__sdek-title {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.orderpay__sdek-adress {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.orderpay__post-title {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  flex-direction: column;
+}
+
+.orderpay__radio {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  justify-content: left;
+  flex-direction: column;
+}
+
+.orderpay__radio-title {
+  color: #000;
+  font-family: Comfortaa;
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.orderpay__radio-title-star {
+  color: #f00;
+  font-family: Comfortaa;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.orderpay__radio-choice {
+  display: flex;
+
+  gap: 20px;
+  column-gap: 20px;
+
+  color: #000;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 400;
+}

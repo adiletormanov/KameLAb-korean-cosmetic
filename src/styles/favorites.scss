@@ -1,0 +1,56 @@
+
+.favorites {
+  margin-bottom: 70px;
+}
+
+.favorites__block {
+  margin-bottom: 70px;
+}
+
+.favorites__title {
+  text-align: center;
+  color: #000000;
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 60px;
+  font-family: Comfortaa;
+}
+
+.favorites__row {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+
+
+
+
+
+.favorites__see {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 20px;
+}
+
+.favorites__see-all {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+	background-color: #fff;
+	border: none;
+}
+
+
+.favorites__empty{
+  text-align: center;
+  color: #000000;
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 60px;
+  font-family: Comfortaa;
+}

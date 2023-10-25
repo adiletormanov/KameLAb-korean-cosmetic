@@ -1,0 +1,120 @@
+.contacts__container{
+	max-width: 920px;
+margin: 70px auto;
+}
+
+.contacts__container-title{
+	color: #000;
+font-family: Comfortaa;
+font-size: 28px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+text-align: center;
+margin-bottom: 60px;
+}
+
+.contacts__container-input{
+	display: flex;
+padding: 20px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+border-radius: 20px;
+background: #FAF1F1;
+width: 100%;
+border: none;
+
+color: #000;
+font-family: Montserrat;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+
+margin-bottom: 50px;
+}
+
+.contacts__container-contacts{
+	display: flex;
+	align-items: center;
+	gap: 10px;
+margin-bottom: 30px;
+}
+
+
+.contacts__container-contacts-phone{
+	color: #000000;
+font-family: Montserrat;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.contacts__container-email{
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 60px;
+}
+
+
+.contacts__container-email-email{
+	color: #000000;
+font-family: Montserrat;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.contacts__container-socialtext{
+	color: #000;
+font-family: Comfortaa;
+font-size: 22px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+margin-bottom: 40px;
+}
+
+.contacts__container-socials{
+	display: flex;
+	gap: 30px;
+	margin-bottom: 60px;
+}
+
+.contacts__container-storetext{
+	color: #000;
+font-family: Comfortaa;
+font-size: 22px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+margin-bottom: 50px;
+}
+
+.contacts__container-store{
+	display: flex;
+	gap: 10px;
+}
+
+.contacts__container-store-adress{
+	color: #000;
+font-family: Montserrat;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.contacts__container-ip{
+	margin-top: 50px;
+	color: #000;
+font-family: Montserrat;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
