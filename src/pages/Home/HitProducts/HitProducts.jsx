@@ -1,13 +1,22 @@
 import React from 'react';
+
+import { useSelector, useDispatch } from 'react-redux';
+import { getHitProducts } from '../../../redux/slices/hitProductsSlice';
+
+import { setShowHits } from '../../../redux/slices/hitProductsSlice';
+
 import Card from '../../../components/Card/Card';
-import { CustomContext } from '../../../utils/context';
 import Skeleton from '../../../components/Skeleton/Skeleton';
 
 const HitProducts = () => {
-  const { hits, getHitProducts, skeleton } = React.useContext(CustomContext);
+  const dispatch = useDispatch();
+
+  const hits = useSelector((state) => state.hitsSlice.hits);
+  const status = useSelector((state) => state.hitsSlice.status);
+  const showHits = useSelector((state) => state.hitsSlice.showHits);
 
   React.useEffect(() => {
-    getHitProducts();
+    dispatch(getHitProducts())
   }, []);
 
   return (
@@ -19,17 +28,29 @@ const HitProducts = () => {
           </h2>
 
           <div className="hitproducts__row">
-            {skeleton
+            {status === 'rejected'
               ? [...new Array(6)].map((_, index) => <Skeleton key={index} />)
-              : hits.map((item) => (
-                  <React.Fragment key={item.id}>
-                    <Card item={item} />
-                  </React.Fragment>
-                ))}
+              : status === 'loading'
+              ? [...new Array(6)].map((_, index) => <Skeleton key={index} />)
+              : hits
+                  .filter((el, idx) => {
+                    return showHits === false ? idx < 6 : idx < showHits * 12;
+                  })
+
+                  .map((item) => (
+                    <React.Fragment key={item.id}>
+                      <Card item={item} />
+                    </React.Fragment>
+                  ))}
           </div>
 
           <div className="hitproducts__see">
-            <button className="hitproducts__see-all">Показать все хиты</button>
+            <button
+              onClick={() => dispatch(setShowHits(!showHits))}
+              className="hitproducts__see-all"
+            >
+              {showHits === false ? 'Показать все акции' : 'Свернить'}
+            </button>
           </div>
         </div>
       </div>

@@ -2,13 +2,14 @@ import React from 'react';
 import CatalogSelect from '../CatalogSelect/CatalogSelect';
 import CatalogRange from '../CatalogRange/CatalogRange';
 import CatalogSlider from '../CatalogSlider/CatalogSlider';
+import { useDispatch } from 'react-redux';
 
-import { CustomContext } from '../../../utils/context';
+import { setCategory, setSort, setSlider } from '../../../redux/slices/catalogSlice';
 
 const CatalogAside = () => {
 
-  const {setSort, setCategory,setSlider  } = React.useContext(CustomContext);
 
+  const dispatch = useDispatch();
 
   const array1 = ['asc', 'desc', 'rate'];
 
@@ -23,9 +24,9 @@ const CatalogAside = () => {
   ];
 
   const resetFilter = () => {
-    setSort('');
-    setCategory('');
-    setSlider([0, 3000]);
+    dispatch(setSort(''));
+    dispatch(setCategory(''));
+    setSlider([0, 4000]);
   };
 
   return (
@@ -37,17 +38,11 @@ const CatalogAside = () => {
           <h2 className="aside__price-title">Цена</h2>
 
           <div className="aside__price-option">
-            <CatalogSlider
-
-
-						/>
+            <CatalogSlider />
           </div>
 
           <div className="aside__price-selects">
-            <CatalogSelect
-              array1={array1}
-              title="Сортировать"
-            />
+            <CatalogSelect array1={array1} title="Сортировать" />
           </div>
         </div>
 
@@ -82,10 +77,7 @@ const CatalogAside = () => {
         </div>
 
         <div className="aside__brand">
-          <CatalogRange
-            array2={array2}
-            title="Все категории"
-          />
+          <CatalogRange array2={array2} title="Все категории" />
         </div>
 
         <div className="aside__product">

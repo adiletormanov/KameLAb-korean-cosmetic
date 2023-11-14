@@ -1,15 +1,22 @@
 import React from 'react';
 
+import { useSelector, useDispatch } from 'react-redux';
+import { getSaleProducts } from '../../../redux/slices/saleProductsSlice';
+
+import { setShowSales } from '../../../redux/slices/saleProductsSlice';
+
 import Card from '../../../components/Card/Card';
-import { CustomContext } from '../../../utils/context';
 import Skeleton from '../../../components/Skeleton/Skeleton';
 
 const SaleProducts = () => {
-  const { sales, getSaleProducts, show, setShow, skeleton } =
-    React.useContext(CustomContext);
+  const dispatch = useDispatch();
+
+  const sales = useSelector((state) => state.saleSlice.sales);
+  const status = useSelector((state) => state.saleSlice.status);
+  const showSales = useSelector((state) => state.saleSlice.showSales);
 
   React.useEffect(() => {
-    getSaleProducts();
+    dispatch(getSaleProducts());
   }, []);
 
   return (
@@ -19,13 +26,13 @@ const SaleProducts = () => {
           <h2 className="saleproducts__title">Акции</h2>
 
           <div className="saleproducts__row">
-            {skeleton
+            {status === 'rejected'
               ? [...new Array(6)].map((_, index) => <Skeleton key={index} />)
-              :
-
-							sales
+              : status === 'loading'
+              ? [...new Array(6)].map((_, index) => <Skeleton key={index} />)
+              : sales
                   .filter((el, idx) => {
-                    return show === false ? idx < 6 : idx < show * 12;
+                    return showSales === false ? idx < 6 : idx < showSales * 12;
                   })
 
                   .map((item) => (
@@ -37,10 +44,10 @@ const SaleProducts = () => {
 
           <div className="saleproducts__see">
             <button
-              onClick={() => setShow(!show)}
+              onClick={() => dispatch(setShowSales(!showSales))}
               className="saleproducts__see-all"
             >
-              {show === false ? 'Показать все акции' : 'Свернить'}
+              {showSales === false ? 'Показать все акции' : 'Свернить'}
             </button>
           </div>
         </div>

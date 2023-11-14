@@ -1,15 +1,35 @@
 import React from 'react';
-import { CustomContext } from '../../../utils/context';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+  delFromCarts,
+  cartCountMinus,
+  cartCountPlus,
+} from '../../../redux/slices/cartSlice';
+
+
+
+
+
+
 
 const CartBlock = ({ el }) => {
-  const { cartCountPlus, cartCountMinus, delCart } =
-    React.useContext(CustomContext);
+  const dispatch = useDispatch();
 
-		const deleteItem = () => {
-			if (window.confirm('Вы уверены?')) {
-				(delCart(el.id));
-		}
-	}
+	const carts = useSelector((state) => state.cartSlice.carts);
+
+  const deleteItem = () => {
+    if (window.confirm('Вы уверены?')) {
+      dispatch(delFromCarts(el.id));
+    }
+  };
+
+
+	console.log(el.count);
+
+
+
+
+
 
   return (
     <div className="cart__block">
@@ -23,7 +43,8 @@ const CartBlock = ({ el }) => {
           <button
             type="button"
             className="cart__block-minus"
-            onClick={() => cartCountMinus(el.id)}
+            onClick={()=> dispatch(
+							cartCountMinus(el))}
           >
             -
           </button>
@@ -31,13 +52,14 @@ const CartBlock = ({ el }) => {
           <button
             type="button"
             className="cart__block-plus"
-            onClick={() => cartCountPlus(el.id)}
+            onClick={()=> dispatch(
+      cartCountPlus(el))}
           >
             +
           </button>
         </div>
 
-        <p className="cart__block-price">{el.price} р.</p>
+        <p className="cart__block-price">{el.price * el.count} р.</p>
       </div>
 
       <button onClick={deleteItem} className="cart__block-remove">

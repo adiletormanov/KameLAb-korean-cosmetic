@@ -1,13 +1,19 @@
 import React from 'react';
-import { CustomContext } from '../../../utils/context';
-import { Link } from 'react-router-dom';
 import Card from '../../../components/Card/Card';
+import {getSameProducts} from '../../../redux/slices/sameProductsSlice'
+import {useDispatch, useSelector,} from 'react-redux';
 
 const CartItemsSame = () => {
-  const { shop, product, getSameProducts } = React.useContext(CustomContext);
+  // const { shop, product, getSameProducts } = React.useContext(CustomContext);
+
+	const dispatch = useDispatch();
+
+
+	const same = useSelector((state) => state.sameProductsSlice.same);
+const product =useSelector((state) => state.sameProductsSlice.product);
 
   React.useEffect(() => {
-    getSameProducts();
+    dispatch(getSameProducts());
   }, []);
 
   return (
@@ -17,9 +23,9 @@ const CartItemsSame = () => {
           <h2 className="cartitems__title">Похожие товары</h2>
 
           <div className="cartitems__row">
-            {shop
+            {same
               .filter((el) => {
-                return el.brand === product.brand || el.id !== product.id;
+                return el.brand === product.brand && el.id !== product.id;
               })
               .map((item) => (
                 <Card item={item} key={item.id}/>

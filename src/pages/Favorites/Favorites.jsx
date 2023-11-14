@@ -1,9 +1,14 @@
 import React from 'react';
 import Card from '../../components/Card/Card';
-import { CustomContext } from '../../utils/context';
+// import { CustomContext } from '../../utils/context';
+
+import { useSelector, useDispatch } from 'react-redux';
+
 
 const Favorites = () => {
-  const { favorites } = React.useContext(CustomContext);
+  // const { favorites } = React.useContext(CustomContext);
+
+	const favorites = useSelector((state) => state.favoritesSlice.favorites);
 
 	React.useEffect(() => {
 		window.scrollTo(0, 0);

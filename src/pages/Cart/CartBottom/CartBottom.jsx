@@ -1,7 +1,9 @@
 import React from 'react';
-import { CustomContext } from '../../../utils/context';
+
+import { useSelector, useDispatch } from 'react-redux';
+
 const CartBottom = () => {
-  const { carts } = React.useContext(CustomContext);
+	const carts = useSelector((state) => state.cartSlice.carts);
 
   return (
     <div className="cartbottom">

@@ -1,9 +1,30 @@
 import React from 'react';
 import {CustomContext} from '../../../utils/context'
+import { useSelector, useDispatch } from 'react-redux';
+import {addCarts, delFromCarts} from '../../../redux/slices/cartSlice'
 
 const CartItemsMain = () => {
 
-	const { product, carts, cartsHandler } = React.useContext(CustomContext);
+	const dispatch =  useDispatch();
+
+	// const { product, carts, cartsHandler } = React.useContext(CustomContext);
+
+	const carts = useSelector((state) => state.cartSlice.carts)
+	const product = useSelector((state) => state.sameProductsSlice.product);
+
+	const inCarts = carts.some((cartItem) => cartItem.id === product.id);
+
+
+	const cartsClick = (e) => {
+    e.stopPropagation();
+    if (inCarts) {
+      dispatch(delFromCarts(product.id));
+    } else {
+      dispatch(addCarts(product));
+    }
+  };
+
+
 
   if ('id' in product) {
     return (
@@ -16,8 +37,8 @@ const CartItemsMain = () => {
             <h2 className="cartitem__about-title">{product.title}</h2>
             <p className="cartitem__about-price">{product.price} р.</p>
 
-						<div onClick={() => cartsHandler(product)}>
-        {carts.some((cartItem) => cartItem.id === product.id) ? (
+						<div onClick={cartsClick}>
+        {inCarts ? (
           <button className="cartitem__about-btn active">В корзине</button>
         ) : (
           <button className="cartitem__about-btn">В корзину</button>

@@ -2,16 +2,19 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 import debounce from "@mui/material/utils/debounce";
+import { useSelector, useDispatch } from 'react-redux';
 
-import { CustomContext } from '../../../utils/context';
+import {setSlider} from '../../../redux/slices/catalogSlice'
 
 
 const  CatalogSlider = () =>{
 
-	const { slider, setSlider } = React.useContext(CustomContext);
+  const dispatch = useDispatch();
 
-    const handleChange = (event,newValue) => {
-        setSlider(newValue);
+	const slider = useSelector((state) => state.catalogSlice.slider);
+
+    const handleChange = (event) => {
+        dispatch(setSlider(event.target.value));
     };
 
     return (
@@ -23,7 +26,7 @@ const  CatalogSlider = () =>{
                 valueLabelDisplay="auto"
                 step={100}
                 min={0}
-                max={3000}
+                max={4000}
             />
         </Box>
     );

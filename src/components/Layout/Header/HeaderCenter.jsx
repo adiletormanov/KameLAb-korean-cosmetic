@@ -3,7 +3,6 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { CustomContext } from '../../../utils/context';
 
 import logo from '../../../assets/img/logo.png';
-import cartimg from '../../../assets/img/cartimg.png';
 import favorites2 from '../../../assets/img/heart.png';
 import phoneimg from '../../../assets/img/phoneimg.png';
 import whatsupimg from '../../../assets/img/whatsupimg.png';
@@ -11,23 +10,47 @@ import fullCart from '../../../assets/img/fullCart.png';
 import searchImg from '../../../assets/img/search.png';
 import clearInput from '../../../assets/img/btn-remove.svg';
 
+import { useSelector, useDispatch } from 'react-redux';
+import { setSearch, setValue } from '../../../redux/slices/catalogSlice';
+import debounce from 'lodash.debounce';
+
 const HeaderCenter = () => {
-  const { search, setSearch } = React.useContext(CustomContext);
 
+	const dispatch = useDispatch();
   const location = useLocation();
-
   const navigate = useNavigate();
-
   const inputRef = React.useRef();
+	// const [value, setValue] = React.useState(''); // локальный стейт для контролируемого инпута
+
+  const value = useSelector((state) => state.catalogSlice.value);
+  const search = useSelector((state) => state.catalogSlice.search);
 
   const onClickClear = () => {
-    setSearch('');
+    dispatch(setSearch(''));
+		dispatch(setValue(''));
     inputRef.current.focus();
   };
 
+	const updateSearchValue = React.useCallback(
+    // сохранили ссылку на функцию
+    debounce((str) => {
+      // сделали функцию отложенной
+      dispatch(setSearch(str));
+    }, 350),
+    [],
+  );
+
+	const inputChange = (e) => {
+		if (location.pathname !== '/catalog') {
+			navigate('/catalog');
+		}
+		dispatch(setSearch(e.target.value));
+		updateSearchValue(e.target.value);
+	}
+
   React.useEffect(() => {
     if (location.pathname !== '/catalog') {
-      setSearch('');
+      dispatch(setSearch(''));
     }
   }, [location.pathname]);
 
@@ -40,18 +63,15 @@ const HeaderCenter = () => {
         <input
           ref={inputRef}
           type="text"
+					// value={value}
           className="header__search-input"
           placeholder="Поиск товара"
-          onChange={(e) => {
-            if (location.pathname !== '/catalog') {
-              navigate('/catalog');
-            }
-            setSearch(e.target.value);
-          }}
+          onChange={inputChange}
         />
 
         {search ? (
           <img
+
             onClick={onClickClear}
             className="header__search-img"
             src={clearInput}

@@ -5,14 +5,13 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 
-import { CustomContext } from '../../../utils/context';
+import { useSelector, useDispatch } from 'react-redux';
+import { setCategory } from '../../../redux/slices/catalogSlice';
 
 const CatalogRange = ({ title, array2 }) => {
-  const {category, changeCategory } = React.useContext(CustomContext);
+  const category = useSelector((state) => state.catalogSlice.category);
 
-  // const handleChange = (event) => {
-  //   setCategory(event.target.value);
-  // };
+  const dispatch = useDispatch();
 
   return (
     <FormControl>
@@ -33,10 +32,9 @@ const CatalogRange = ({ title, array2 }) => {
       </FormLabel>
 
       <RadioGroup
-
         aria-labelledby="demo-radio-buttons-group-label"
         defaultValue={category}
-        onChange={changeCategory}
+        onChange={(e) => dispatch(setCategory(e.target.value))}
       >
         {array2.map((item, id) => (
           <FormControlLabel

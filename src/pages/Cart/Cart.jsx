@@ -1,10 +1,11 @@
 import React from 'react';
 import CartBottom from './CartBottom/CartBottom';
-import { CustomContext } from '../../utils/context';
 import CartBlock from './CartBlock/CartBlock';
 
+import { useSelector, useDispatch } from 'react-redux';
+
 const Cart = () => {
-  const { carts } = React.useContext(CustomContext);
+	const carts = useSelector((state) => state.cartSlice.carts);
 
 	React.useEffect(() => {
 		window.scrollTo(0, 0);
@@ -12,7 +13,7 @@ const Cart = () => {
 
   if (carts.length) {
     return (
-      <div class="main">
+      <div className="main">
         <div className="cart">
 
 
@@ -28,7 +29,7 @@ const Cart = () => {
               </div>
               {carts.map((el) => (
                 <React.Fragment key={el.id}>
-                  <CartBlock el={el} />
+                  <CartBlock el={el} {...el} />
 
                 </React.Fragment>
               ))}

@@ -8,17 +8,16 @@ import Select from '@mui/material/Select';
 
 import { CustomContext } from '../../../utils/context';
 
+import { useSelector, useDispatch } from 'react-redux';
+import { setSort } from '../../../redux/slices/catalogSlice';
 
-const CatalogSelect = ({title, array1}) => {
-	const { sort, changeSort } = React.useContext(CustomContext);
+const CatalogSelect = ({ title, array1 }) => {
+  const sort = useSelector((state) => state.catalogSlice.sort);
 
-
-  // const handleChange = (event) => {
-  //   setSort(event.target.value);
-  // };
+  const dispatch = useDispatch();
 
   return (
-    <Box sx={{ minWidth: 250, marginTop: 3 }} >
+    <Box sx={{ minWidth: 250, marginTop: 3 }}>
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">{title}</InputLabel>
         <Select
@@ -26,7 +25,7 @@ const CatalogSelect = ({title, array1}) => {
           id="demo-simple-select"
           value={sort}
           label={title}
-          onChange={changeSort}
+          onChange={(e) => dispatch(setSort(e.target.value))}
         >
           {array1.map((item) => (
             <MenuItem key={item} value={item}>
